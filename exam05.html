@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button class="btn">버튼</button>
+    <script>
+      var b = 2; //전역변수
+
+      function fn() {
+        a = 2; //a에 2할당, 호이스팅 함수레벨지역변수
+        c = 3; //c에 3할당, 선언이 없어서 전역변수
+        console.log(a); //2
+        console.log(b); //b가 선언되고 초기화만 된채로 값이 할당되지 않아서 언디
+        console.log(c); //3
+        var a = 3; //함수레벨지역변수로 선언됨 호이스팅
+        var b = 1; //함수레벨지역변수
+      }
+
+      const button = document.querySelector("button.btn");
+      const handleClick = () => {
+        fn();
+      };
+      button.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>

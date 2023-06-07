@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>
+      숫자만 입력
+      <input type="number" />
+    </label>
+
+    <button class="btn">버튼</button>
+    <p>숫자를 입력한 뒤 버튼을 눌러서 짝수면 A 홀수면 B</p>
+    <script>
+      const inputNumber = document.querySelector('input[type="number"]');
+      const button = document.querySelector("button.btn");
+
+      const handleClick = () => {
+        window.alert(parseInt(inputNumber.value) % 2 === 0 ? "A" : "B");
+      };
+
+      button.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>

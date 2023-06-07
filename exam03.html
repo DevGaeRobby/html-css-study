@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--     
+    <button class="btn" >버튼</button>
+    <script>
+        var number = 1;
+        const button = document.querySelector('button.btn');
+
+        const handleClick = () => {
+            number = number + 1
+            window.alert(number)
+        }
+
+        button.addEventListener('click', handleClick)
+    </script> 
+-->
+
+    <button class="btn">버튼</button>
+    <script>
+      function addNumber() {
+        let number = 1;
+        // 정보의 은닉화, 캡슐화
+        return function () {
+          number = number + 1;
+          return number;
+        };
+      }
+      const fn = addNumber();
+
+      const button = document.querySelector("button.btn");
+      const handleClick = () => {
+        window.alert(fn());
+      };
+      button.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>

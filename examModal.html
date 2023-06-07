@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="examModal.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="modal-contaier">
+      <div id="background"></div>
+      <div id="background">
+        <p>가나다라<br /></p>
+        <div>
+          <button class="close">닫기</button>
+        </div>
+      </div>
+    </div>
+    <button class="btn">모달</button>
+    <script>
+      const openButton = document.querySelector("button.btn");
+      const closeButton = document.querySelector("button.close");
+      const modalContainer = document.getElementById("modal-contaier");
+      const background = document.getElementById("background");
+      const handleClick = () => {
+        modalContainer.classList.toggle("isVisible");
+      };
+
+      background.addEventListener("click", handleClick);
+
+      openButton.addEventListener("click", handleClick);
+      closeButton.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
